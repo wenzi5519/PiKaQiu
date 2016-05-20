@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">PiKaQiu</string>
+    <string name="app_name">皮卡丘</string>
+
+    <string name="hint_input_name">请输入用户名：</string>
+    <string name="label_user_name">用户名：</string>
+    <string name="hint_input_password">请输入密码：</string>
+    <string name="label_user_password">密码：</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_cancle">取消</string>
+    <string name="help" >账号密码均为：\n   admin\n\n项目描述:\n   该项目是我的练手项目，主要是将平时学习的一些东西实际应用起来,代码不完善，欢迎大神们吐槽~\n\n\n声明：\n   本APP接口，资源全部来源于网络，如有侵权请告知!</string>
+    <string name="exit" >再按你就看不见我了>_&lt; !</string>
+    <string name="prompt">你快看~</string>
+    <string name="sure">好吧。</string>
+    <string name="loading">正在登陆中 ✪ω✪</string>
+    <string name="loading_success">登录成功！╮(￣▽￣)╭</string>
+    <string name="loading_failt">是不是密码输错了 ಥ_ಥ</string>
+    <string name="fighting">一只奋斗的小青年ヽ(•̀ω•́ )ゝ</string>
 </resources>

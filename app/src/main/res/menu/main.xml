@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/ab_search"
+        android:actionViewClass="android.widget.ImageView"
+        android:icon="@mipmap/mine_icon_search_blue"
+        android:orderInCategory="80"
+        android:title="sousuo"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_exit"
+        android:actionViewClass="android.widget.Button"
+        android:icon="@mipmap/mine_icon_setting"
+        android:orderInCategory="100"
+        android:title="tuichu"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/group_bottom"
+    android:elevation="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/rbtn_home"
+        style="@style/rbtn_style"
+        android:drawableTop="@drawable/bg_rbtn_home"
+        android:text="妹纸" />
+
+    <RadioButton
+        android:id="@+id/rbtn_daily"
+        style="@style/rbtn_style"
+        android:drawableTop="@drawable/bg_rbtn_daily"
+        android:text="日报" />
+
+    <RadioButton
+        android:id="@+id/rbtn_date"
+        style="@style/rbtn_style"
+        android:drawableTop="@drawable/bg_rbtn_date"
+        android:text="历史" />
+
+    <RadioButton
+        android:id="@+id/rbtn_mine"
+        style="@style/rbtn_style"
+        android:drawableTop="@drawable/bg_rbtn_mine"
+        android:text="我的" />
+</RadioGroup>
