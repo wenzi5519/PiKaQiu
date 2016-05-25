@@ -7,5 +7,5 @@
     <item android:color="@color/background_floating_material_dark" />
     -->
     <item android:color="@color/blue" android:state_checked="true"></item>
-    <item android:color="@color/grey"></item>
+    <item android:color="@color/gray"></item>
 </selector>

@@ -4,23 +4,19 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
 import butterknife.ButterKnife;
-import wzw.pikaqiu.R;
 
 /**
  * Created by 子文 on 2015/12/11.
  * Activity基类
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
-    private long mExitTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             newFragment();
         } else {
         }
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+//        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContent();
         ButterKnife.bind(this);
         initData();
@@ -142,20 +138,5 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         green = (int) Math.floor(green * (1 - 0.1));
         blue = (int) Math.floor(blue * (1 - 0.1));
         return Color.rgb(red, green, blue);
-    }
-
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if ((System.currentTimeMillis() - mExitTime) > 2000) {
-                Object mHelperUtils;
-                Toast.makeText(this, getResources().getString(R.string.exit), Toast.LENGTH_SHORT).show();
-                mExitTime = System.currentTimeMillis();
-            } else {
-                finish();
-            }
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
     }
 }

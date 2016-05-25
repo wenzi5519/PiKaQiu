@@ -56,7 +56,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         switch (v.getId()) {
             case R.id.btn_login:
                 btnLogin.setClickable(false);
-                btnLogin.setBackgroundResource(R.color.grey);
+                btnLogin.setBackgroundResource(R.color.gray);
                 loginPresenter.setProgressBarVisiblity(View.VISIBLE);
                 String userNameStr = edtName.getText().toString();
                 String passwordStr = edtPassword.getText().toString();

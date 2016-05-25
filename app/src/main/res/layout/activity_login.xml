@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:button="@drawable/che_save_pas"
             android:text=" 记住密码"
-            android:textColor="@color/grey"
+            android:textColor="@color/gray"
             android:textSize="13dp" />
 
         <Button

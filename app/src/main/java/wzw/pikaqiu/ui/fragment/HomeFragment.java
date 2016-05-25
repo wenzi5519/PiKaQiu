@@ -23,8 +23,6 @@ import wzw.pikaqiu.ui.base.BaseFragment;
 import wzw.pikaqiu.ui.base.OnItemClickListener;
 import wzw.pikaqiu.utils.GankBeautyResultToItemsMapper;
 
-/**
- */
 public class HomeFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
 
     @Bind(R.id.rec_list)
@@ -44,23 +42,6 @@ public class HomeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         swipeRefresh.setColorSchemeColors(R.color.colorPrimaryDark,
                 R.color.colorPrimary, R.color.blue);
         swipeRefresh.setOnRefreshListener(this);
-
-//        subscription = NetWork.getNetDate(Api.DB_BREAST)
-//                .getBeauties(15, 1)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .map(GankBeautyResultToItemsMapper.getInstance())
-//                .subscribe(new Action1<List<Item>>() {
-//                    @Override
-//                    public void call(List<Item> items) {
-//                        adapter.setList(items);
-//                    }
-//                }, new Action1<Throwable>() {
-//                    @Override
-//                    public void call(Throwable throwable) {
-//                        throwable.printStackTrace();
-//                    }
-//                });
         recList.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         adapter = new WidgetListAdapter(null);
         recList.setAdapter(adapter);
@@ -82,7 +63,7 @@ public class HomeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
     @Override
     public void onRefresh() {
         subscription = NetWork.getNetDate(Api.DB_BREAST)
-                .getBeauties(15, 1)
+                .getBeauties(20, 1)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(GankBeautyResultToItemsMapper.getInstance())

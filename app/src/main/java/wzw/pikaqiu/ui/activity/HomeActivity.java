@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -50,6 +51,7 @@ public class HomeActivity extends BaseActivity {
     private DateFragment dateFragment;
     private MineFragment mineFragment;
     private PopupWindow popupWindow;
+    private long mExitTime;
 
     @Override
     protected void newFragment() {
@@ -94,7 +96,7 @@ public class HomeActivity extends BaseActivity {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void initData() {
-        toolbar.setTitle("文子");// 标题的文字需在setSupportActionBar之前，不然会无效
+        toolbar.setTitle(getResources().getString(R.string.bar_title));// 标题的文字需在setSupportActionBar之前，不然会无效
         toolbar.setSubtitle(getResources().getString(R.string.fighting));//副标题
         setSupportActionBar(toolbar);
         mContent = homeFragment;
@@ -202,5 +204,20 @@ public class HomeActivity extends BaseActivity {
                 HomeActivity.this.finish();
                 break;
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Toast.makeText(this, getResources().getString(R.string.exit), Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
